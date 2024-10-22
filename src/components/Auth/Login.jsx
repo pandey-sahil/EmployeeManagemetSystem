@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
 
-  const submitHandler = (e) => { 
+  const submitHandler = (e) => {
     e.preventDefault()
+    handleLogin(email, password);
     console.log({
       email: email,
       password: password,
     })
     setEmail("")
     setPassword("")
-  }; 
+  };
 
   return (
     <div className='flex items-center justify-center h-screen bg-[#111]'>
@@ -23,14 +24,14 @@ const Login = () => {
           <input
             type='email'
             value={email}
-            onChange={(e) => {setEmail(e.target.value)}}
+            onChange={(e) => { setEmail(e.target.value) }}
             placeholder='Enter your email'
             className='w-full px-4 py-2 text-gray-200 bg-[#111] border border-emerald-500 rounded focus:outline-none focus:border-emerald-400'
           />
           <input
             type='password'
             value={password}
-            onChange={(e) => {setPassword(e.target.value)}}
+            onChange={(e) => { setPassword(e.target.value) }}
             placeholder='Enter your password'
             className='w-full px-4 py-2 text-gray-200 bg-[#111] border border-emerald-500 rounded focus:outline-none focus:border-emerald-400'
           />
