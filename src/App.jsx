@@ -8,16 +8,16 @@ const App = () => {
 	const [user, setUser] = useState(null);
 	const authData = useContext(AuthContext)
 
-	// useEffect(() => {
-	// 	if (authData) {
-	// 		const loggedInUser = localStorage.getItem("loggedInUser");
-	// 		if (loggedInUser) {
-    //             setUser(loggedInUser.role);
-    //         } else {
-    //             setUser(null);
-    //         }
-	// 	}
-	// }, [authData])
+	useEffect(() => {
+		if (authData) {
+			const loggedInUser = localStorage.getItem("loggedInUser");
+			if (loggedInUser) {
+                setUser(loggedInUser.role);
+            } else {
+                setUser(null);
+            }
+		}
+	}, [authData])
 
 
 	const handleLogin = (email, password) => {
