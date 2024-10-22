@@ -1,10 +1,16 @@
-import { useSelector } from 'react-redux';
+import React from 'react'
+import Login from './components/Auth/Login'
+import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
+import AdminDashboard from './components/Dashboard/AdminDashboard'
 
 const App = () => {
-	const counter = useSelector((state) => state);
-	console.log(counter);
+  return (
+	<>
+	{/* <Login /> */}
+	{/* <EmployeeDashboard /> */}
+	<AdminDashboard />
+	</>
+  )
+}
 
-	return <div>app</div>;
-};
-
-export default App;
+export default App
